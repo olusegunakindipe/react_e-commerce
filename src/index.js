@@ -5,6 +5,7 @@ import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "popper.js/dist/umd/popper";
 import './index.css';
+import "font-awesome/css/font-awesome.css"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
