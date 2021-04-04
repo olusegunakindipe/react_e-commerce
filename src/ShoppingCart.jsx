@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import Product from "./Product";
 
 class ShoppingCart extends Component {
@@ -7,15 +8,7 @@ class ShoppingCart extends Component {
         super(props);
         //initialization of the state
         this.state = {
-            products: [
-                {id: 1, productName: "iphone", price: 1000, qty: 0},
-                {id: 2, productName: "Sony", price: 4500, qty: 0},
-                {id: 3, productName: "Samsung", price: 5610, qty: 0},
-                {id: 4, productName: "Xbox", price: 9000, qty: 0},
-                {id: 5, productName: "Lenove", price: 12000, qty: 0},
-                {id: 6, productName: "iphone", price: 700, qty: 0}
-            ],
-    
+            products: []
         } 
     }
   
@@ -55,6 +48,7 @@ class ShoppingCart extends Component {
 
     }
 
+
     render(){
         return (
             <div className="container-fluid">
@@ -75,5 +69,12 @@ class ShoppingCart extends Component {
         );
     }
 
+    componentDidMount(){
+        axios.get(`http://localhost:4000/products`)
+            .then(res => {
+                const products = res.data
+                this.setState({products});
+            })
+    }
 } 
 export default ShoppingCart;
