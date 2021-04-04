@@ -1,14 +1,15 @@
-import React, {Component}from "react";
+import React from "react";
 import './App.css';
 // import MainContent from "./MainContent";
-import Navbar from './Navbar.js';
-import ShoppingCart from "./ShoppingCart";
+import Navbar from './Navbar';
+import Login from './Login';
+// import ShoppingCart from "./ShoppingCart";
 
 function App() {
   return (
     <React.Fragment>
       <Navbar/>
-      <ShoppingCart/>
+      <Login/>
     </React.Fragment>
   );
 }
