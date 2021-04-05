@@ -51,7 +51,7 @@ class ShoppingCart extends Component {
 
     render(){
         return (
-            <div className="container-fluid">
+            <div>
                 <h4>Shopping Cart</h4>
                 <div className = "row">
                   {this.state.products.map(
@@ -68,8 +68,10 @@ class ShoppingCart extends Component {
 
         );
     }
-
+  
     componentDidMount(){
+        document.title = "Shopping Cart Page";
+
         axios.get(`http://localhost:4000/products`)
             .then(res => {
                 const products = res.data

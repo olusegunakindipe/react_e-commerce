@@ -102,6 +102,10 @@ class CustomersList extends Component{
         )
     }
 
+    componentDidMount(){
+        document.title = "Customers Page";
+    }
+
 }
 
-export default MainContent;
+export default CustomersList;

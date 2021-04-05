@@ -1,9 +1,9 @@
 import React, {Component} from "react";
-  
+import {Link} from "react-router-dom";
 class Product extends Component{
     render(){
         return (
-            <div className ="col-md-6 col-lg-6">
+                <div className ="col-md-6 col-lg-6">
                 <div className = "card m-2">
                     <div className="card-body">
                         <div className="text-muted"># {this.props.product.id}
@@ -24,13 +24,14 @@ class Product extends Component{
                         </div>
                         </div>
                         <div className="float-right">
+                            <Link to={`product/${this.props.product.id}`} className="mr-2">Details </Link>
                             {this.props.children}
 
                         </div>
                     </div>
                 </div>
             </div>
-           
+        
         )
     }
 }
